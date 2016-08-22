@@ -1,0 +1,11 @@
+rootProject.name = 'bunninn'
+
+include ':app'
+include ':react-native-spinkit'
+project(':react-native-spinkit').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-spinkit/android')
+include ':react-native-code-push'
+project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
+include ':react-native-bridge-firebase'
+project(':react-native-bridge-firebase').projectDir = new File(rootProject.projectDir, '../Libraries/react-native-bridge-firebase/android')
+include ':react-native-cropper'
+project(':react-native-cropper').projectDir = new File(rootProject.projectDir, '../Libraries/react-native-cropper/android')

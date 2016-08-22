@@ -1,0 +1,64 @@
+{
+  "name": "bunninn",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "eslint": "eslint ./src ./Libraries",
+    "logcat-android": "adb logcat *:S ReactNative:V ReactNativeJS:V",
+    "release-ios": "code-push release-react bunninn-ios ios -d Production --targetBinaryVersion '0.0.1'",
+    "release-android": "code-push release-react bunninn-android android -d Production --targetBinaryVersion '0.0.1'",
+    "beta-ios": "code-push release-react bunninn-ios ios --targetBinaryVersion '0.0.1'",
+    "beta-android": "code-push release-react bunninn-android android --targetBinaryVersion '0.0.1'",
+    "rollback-ios": "code-push rollback bunninn-ios Production",
+    "rollback-android": "code-push rollback bunninn-android Production",
+    "history-ios": "code-push deployment history bunninn-ios Production",
+    "history-android": "code-push deployment history bunninn-android Production"
+  },
+  "jest": {
+    "haste": {
+      "defaultPlatform": "ios",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "providesModuleNodeModules": [
+        "react",
+        "react-native"
+      ]
+    },
+    "preset": "jest-react-native"
+  },
+  "dependencies": {
+    "lodash": "^4.14.1",
+    "moment": "^2.14.1",
+    "moment-timezone": "^0.5.5",
+    "react": "~15.2.0",
+    "react-native": "^0.30.0",
+    "react-native-code-push": "^1.13.5-beta",
+    "react-native-spinkit": "^0.1.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.0",
+    "babel-jest": "^14.1.0",
+    "babel-preset-react-native": "^1.9.0",
+    "cz-conventional-changelog": "^1.1.6",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-react-native": "^1.2.0",
+    "faker": "^3.1.0",
+    "jest": "^14.1.0",
+    "jest-react-native": "^14.1.0",
+    "react-test-renderer": "^15.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
